@@ -44,3 +44,9 @@ Route::get('/users/count', function () {
         'count' => User::count(),
     ]);
 });
+
+Route::get('/users', function () {
+    return response()->json([
+        'users' => User::all(),
+    ]);
+});
