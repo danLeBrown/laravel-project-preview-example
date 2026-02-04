@@ -11,7 +11,7 @@ app_entrypoint: artisan # Entrypoint for the app
 # Optional: Commands run on the host before docker compose (e.g. copy .env)
 build_commands:
   - cp .env.example .env
-  - php artisan key:generate
+  # - php artisan key:generate
 
 # Optional: Extra infra (e.g. Redis for BullMQ). App gets REDIS_URL=redis://redis:6379
 extra_services:
