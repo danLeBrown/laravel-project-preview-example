@@ -1,0 +1,30 @@
+# Preview Deployer Configuration
+# Place this file in your repository root as preview-config.yml
+
+framework: laravel # Options: nestjs, go, laravel (overrides auto-detection)
+database: postgres # Options: postgres, mysql, mongodb
+health_check_path: /health # Health check endpoint path
+app_port_env: PORT # Environment variable name for the app port
+app_port: 8000 # Port the app listens on
+
+
+# Optional: Commands run on the host before docker compose (e.g. copy .env)
+build_commands:
+  - cp .env.example .env
+  - php artisan key:generate
+
+# Optional: Extra infra (e.g. Redis for BullMQ). App gets REDIS_URL=redis://redis:6379
+extra_services:
+  - redis
+
+# Optional: Environment variables (injected at runtime; keep .env in .dockerignore)
+# env:
+#   - NODE_ENV=preview
+
+# Optional: Env file(s) relative to repo root (e.g. .env). Use with build_commands: [cp .env.example .env]
+env_file: .env
+
+# Optional: Commands run inside the app container before the main process (migrations, seeding)
+# startup_commands:
+#   - npm run migration:run
+#   - npm run seed
