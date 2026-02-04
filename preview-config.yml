@@ -3,7 +3,7 @@
 
 framework: laravel # Options: nestjs, go, laravel (overrides auto-detection)
 database: postgres # Options: postgres, mysql, mongodb
-health_check_path: /health # Health check endpoint path
+health_check_path: /api/health # Health check endpoint path
 app_port_env: PORT # Environment variable name for the app port
 app_port: 8000 # Port the app listens on
 app_entrypoint: artisan # Entrypoint for the app
